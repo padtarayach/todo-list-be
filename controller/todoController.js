@@ -5,7 +5,6 @@ const todoController = {
     getAll : async (req,res) => {
         try { const todo = await TodoModel.find()
             res.status(200).json(todo)
-            console.log("eiei");
             
         } catch (error) {
             res.status(500).json(error)  
