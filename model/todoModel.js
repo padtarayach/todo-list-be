@@ -11,9 +11,20 @@ const todoSchema = new mongoose.Schema({
         required: true
     },
 
-    date: {
-        type: Date,
+    createDate:{
+        type:Date,
         default: new Date()
+    },
+
+    dueDate: {
+        type: Date,
+        required: true
+    },
+
+    type:{
+        type:String,
+        enum:['work','personal','life','school'],
+        default:'personal'
     },
 
     status: {
