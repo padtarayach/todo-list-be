@@ -23,7 +23,7 @@ const todoSchema = new mongoose.Schema({
 
     type:{
         type:String,
-        enum:['work','personal','life','school'],
+        enum:['work','personal','life','study'],
         default:'personal'
     },
 
