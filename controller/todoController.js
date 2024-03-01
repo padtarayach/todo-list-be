@@ -38,7 +38,7 @@ const todoController = {
     },
     deleteTodo: async(req,res) => {
         try {
-           await TodoModel.findOneAndDelete(req.params.id)
+           await TodoModel.findByIdAndDelete(req.params.id)
            res.status(200).json("delete success")
             
         } catch (error) {
