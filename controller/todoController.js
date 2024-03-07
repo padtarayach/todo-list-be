@@ -45,7 +45,24 @@ const todoController = {
             res.status(500).json(error)
             
         }
+    },
+    getFinishTodo: async(req,res) => {
+        try {
+            const finishTodo = await TodoModel.find({status:"finish"})
+            res.status(200).json(finishTodo)
+        } catch (error) {
+            res.status(500).json(error)  
+        }
+    },
+    getUnfinishTodo: async(req,res) => {
+        try {
+            const unfinishTodo = await TodoModel.find({status:{$ne:"finish"}})
+            res.status(200).json(unfinishTodo)
+        } catch (error) {
+            res.status(500).json(error)  
+        }
     }
+    
 
 }
 

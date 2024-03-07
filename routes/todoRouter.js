@@ -6,11 +6,16 @@ const todoRouter = express.Router();
 //get all
 todoRouter.get("/", todoController.getAll);
 
+//get finished Todo
+todoRouter.get("/finish", todoController.getFinishTodo);
+
+//get unfinish todo
+todoRouter.get("/unfinish",todoController.getUnfinishTodo)
+
 //get by id
 todoRouter.get("/:id", todoController.getById);
 
 // create todo
-
 todoRouter.post("/", todoController.createTodo);
 
 //update todo
